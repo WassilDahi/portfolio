@@ -28,9 +28,7 @@ const Navbar = () => {
         return active !== name ? (
            <Link href={route}>
               <a>
-                 <span
-                    className='mx-2 cursor-pointer hover:border-b-4 hover:text-green'
-                    onClick={() => setActive(name)}>
+                 <span className='mx-2 cursor-pointer hover:border-b-4 hover:text-green-500' onClick={() => setActive(name)}>
                     {name}
                  </span>
               </a>
@@ -42,7 +40,7 @@ const Navbar = () => {
     return (
         <div className="flex justify-between px-5 py-3 my-3">
             <span className="text-xl font-bold text-green-500 border-b-4 border-green-500">{activeItem}</span>
-            <div className="flex space-x-3 text-lg text-red-800">
+            <div className="flex space-x-5 text-lg">
 
                 <NavItem active={activeItem} setActive={setActiveItem} name='About' route='/' />
                 <NavItem active={activeItem} setActive={setActiveItem} name='Resume' route='/resume' />
