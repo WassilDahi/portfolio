@@ -7,22 +7,26 @@ import { useState, useEffect } from 'react';
 
 
 const Sidebar = () => {
-    const [mounted, setMounted] = useState(false)
-
-  
-    // When mounted on client, now we can show the UI
-    useEffect(() => setMounted(true), [])
     const {theme,setTheme} = useTheme();
-    const [current, setCurrent] = useState<string>('Dark')
+    const [current, setCurrent] = useState<string>(theme=='light' ? 'Dark': 'Light')
+   
+
+   
+
+    console.log({theme})
+    // When mounted on client, now we can show the UI
+    
 
 
     const changeTheme= () => {
-        
+        console.log(theme)
         setTheme(theme=='light'?'dark':'light');
         theme=='dark'?setCurrent('Dark'):setCurrent('Light');
     }
 
-    if (!mounted) return null
+  
+    console.log({theme})
+  
 
   
 
