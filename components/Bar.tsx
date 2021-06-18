@@ -10,13 +10,17 @@ const Bar:FunctionComponent<{
 
 }> = ({data:{Icon,level,name}}) => {
     return (
-        <div className='my-2 bg-gray-300 rounded-full '>
-
+        <div className='my-2 bg-gray-300 rounded-full whitespace-nowrap'>
+            
             <div className='flex items-center px-4 py-1 rounded-full dark:text-black bg-gradient-to-r from-green-300 to-green-700'  
             style={{ width: level }}
             >
-                        <Icon className='mr-3'/>
+                <div className='flex items-center'>
+                <Icon className='mr-3'/>  
             {name}
+
+                </div>
+
             </div>
         </div>
     )

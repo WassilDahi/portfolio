@@ -26,7 +26,7 @@ const Navbar = () => {
         route: string
      }> = ({ active, setActive, name, route }) => {
         return active !== name ? (
-           <Link href={route}>
+           <Link href={route}  scroll={false}>
               <a>
                  <span className='mx-2 cursor-pointer hover:border-b-4 hover:text-green-500' onClick={() => setActive(name)}>
                     {name}

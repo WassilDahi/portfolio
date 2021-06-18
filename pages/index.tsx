@@ -5,7 +5,7 @@ import ServiceCard from '../components/ServiceCard';
 
 
 
-const index = (props) => {
+const index = () => {
 
 
   return (
@@ -15,9 +15,9 @@ const index = (props) => {
       <div className='flex-grow p-4 mt-5 bg-gray-100 dark:bg-gray-700' style={{marginLeft:'-1.5rem',marginRight:'-1.5rem'}}>
         <h6 className='my-3 text-xl font-bold text-green-500 dark:text-green-500'>What I offer</h6>
       <div className='grid gap-6 lg:grid-cols-2'>
-        {services.map(services=>(
+        {services.map(service=>(
         <div className='bg-gray-300 rounded-lg dark:bg-gray-500 lg:col-span-1'>
-        <ServiceCard service={services}/>
+        <ServiceCard  key={service.id} service={service}/>
         
         </div>
         ) )}
@@ -29,21 +29,3 @@ const index = (props) => {
 }
 
 export default index
-
-/*
-export const  getServerSideProps = async (context:GetServerSidePropsContext) => {
-
-const res = await fetch('http://localhost:3000/api/services')
-
-const data =  await res.json() 
-
-
-
-return {
-  props:{
-
-    services: data.services,
-  }
-}
-
-}*/
