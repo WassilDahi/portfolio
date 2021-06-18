@@ -1,7 +1,10 @@
 import { FunctionComponent, useState } from 'react';
 import { IProject } from '../type';
 import { AiOutlineGithub } from 'react-icons/ai';
-import {MdClose} from 'react-icons/md'
+import {MdClose} from 'react-icons/md';
+import Image from 'next/image';
+
+
 const ProjectCard:FunctionComponent<{
 
     project:IProject
@@ -23,16 +26,16 @@ const ProjectCard:FunctionComponent<{
     
     return (
         <div>
-               <img src={image_path} alt={name} className='cursor-pointer' onClick={()=>setShowDetails(true)} />
+               <Image src={image_path} alt={name} className='cursor-pointer' onClick={()=>setShowDetails(true)} width='400' layout='responsive' height='200'/>
                <p className='my-2 text-center'>{name}</p>
 
                 {
                     showDetails && 
                 
-               <div className='absolute top-0 left-0 z-10 grid h-auto p-2 text-black bg-gray-300  md:grid-cols-2 gap-x-12 dark:text-white dark:bg-gray-900'>
+               <div className='absolute top-0 left-0 z-10 grid w-full h-auto p-2 text-black bg-gray-300 md:grid-cols-2 gap-x-12 dark:text-white dark:bg-gray-900'>
 
                    <div>
-                   <img src={image_path} alt={name}/>
+                   <Image src={image_path} alt={name} width='400' layout='responsive' height='200'/>
                    <div  className="flex justify-center my-4 space-x-3">
                        <a href={github_url} className="flex items-center px-4 py-4 space-x-3 text-lg text-white bg-gray-700 rounded-md dark:text-white dark:bg-gray-700"><AiOutlineGithub/>
                        <span>Github</span></a>

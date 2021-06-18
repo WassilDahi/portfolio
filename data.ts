@@ -113,7 +113,40 @@ export const projects:IProject[]=[
     deployed_url:'',
     key_techs:['react','chartjs','tailwind css']
 
+    },
+    {
+        name:'ting',
+    description:"this is a project of algorthims sorting",
+    image_path:'/images/sort.jpg',
+    github_url:'',
+    category:['react'],
+    deployed_url:'',
+    key_techs:['react','chartjs','tailwind css']
+
+    },
+    {
+        name:'Alting',
+    description:"this is a project of algorthims sorting",
+    image_path:'/images/sort.jpg',
+    github_url:'',
+    category:['mongo','django'],
+    deployed_url:'',
+    key_techs:['react','chartjs','tailwind css']
+
+    },
+    {
+        name:'ing',
+    description:"this is a project of algorthims sorting",
+    image_path:'/images/sort.jpg',
+    github_url:'',
+    category:['django'],
+    deployed_url:'',
+    key_techs:['react','chartjs','tailwind css']
+
     }
+
+
+
 
 
 ]

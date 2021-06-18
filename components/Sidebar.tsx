@@ -4,6 +4,7 @@ import {GoLocation} from 'react-icons/go'
 import { AiOutlinePhone } from 'react-icons/ai'
 import {useTheme} from 'next-themes'
 import { useState, useEffect } from 'react';
+import Image from 'next/image'
 
 
 const Sidebar = () => {
@@ -38,7 +39,8 @@ const Sidebar = () => {
 
     return (
         <div> 
-            <img src="https://media-exp3.licdn.com/dms/image/C4D03AQEkGb3TBxqSzA/profile-displayphoto-shrink_800_800/0/1571415781760?e=1628726400&v=beta&t=FtsuhKL7YbRve-x7Ei8ob3DBsL_lgUM_Dllrx902v_k" alt="user avatar" className="w-32 h-32 mx-auto rounded-full"/>
+
+            <Image width='128px' height='128px' src="/images/profil.jpeg" alt="user avatar" className="w-32 h-32 mx-auto rounded-full"/>
             <h3 className="my-4 text-3xl font-medium tracking-wider"><span> Wassil </span>
             Dahimene</h3>
             <p className="px-2 py-1 my-3 bg-gray-200 rounded-full dark:bg-gray-500">Web Developer</p>
