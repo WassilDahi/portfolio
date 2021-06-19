@@ -7,37 +7,45 @@ import { motion } from 'framer-motion';
 import { fadeInUp, stagger } from '../animation';
 
 
+
 const ProjectCard:FunctionComponent<{
 
-    project:IProject
+    project:IProject;
+    showDetails:null|number;
+    setShowDetails: (id: null|number) => void;
 
 }> = ({
 
     project:{
-        name,image_path,category,deployed_url,description,github_url,key_techs
-    }
-
-
+        name,image_path,category,deployed_url,description,github_url,key_techs,id,
+    },
+    showDetails,
+    setShowDetails,
 
 
 }) => {
 
 
 
-    const [showDetails, setShowDetails] = useState(false)
+    
     
     return (
+        
         <div>
-               <Image src={image_path} alt={name} className='cursor-pointer' onClick={()=>setShowDetails(true)} width='400' layout='responsive' height='200'/>
+               <Image src={image_path} alt={name} className='cursor-pointer' onClick={()=>setShowDetails(id)} width='400' layout='responsive' height='200'/>
                <p className='my-2 text-center'>{name}</p>
 
                 {
-                    showDetails && 
-                
-               <div className='absolute top-0 left-0 z-10 grid w-full h-auto p-2 text-black bg-gray-300 md:grid-cols-2 gap-x-12 dark:text-white dark:bg-gray-900'>
+                    showDetails === id && ( 
+               
+             <div className="absolute top-0 left-0 z-10 grid w-full h-auto p-2 text-black bg-gray-300 rounded-lg md:p-10 md:grid-cols-2 gap-x-12 dark:text-white dark:bg-gray-900">
+              
 
+                    
+
+                    
                    <motion.div variants={stagger} initial="initial" animate="animate">
-                       <motion.div variants={fadeInUp}>
+                       <motion.div variants={fadeInUp} className="border-4 border-blue-100">
                    <Image src={image_path} alt={name} width='400' layout='responsive' height='200'/></motion.div>
                    <motion.div variants={fadeInUp}   className="flex justify-center my-4 space-x-3">
                        <a href={github_url} className="flex items-center px-4 py-4 space-x-3 text-lg text-white bg-gray-700 rounded-md dark:text-white dark:bg-gray-700"><AiOutlineGithub/>
@@ -69,13 +77,17 @@ const ProjectCard:FunctionComponent<{
 
                     </motion.div>
 
-                    <button  className='absolute p-1 bg-gray-200 rounded-full top-3 right-3 focus:outline-none dark:bg-gray-500' onClick={()=>setShowDetails(false)}>
+                    <button  className='absolute p-1 bg-gray-200 rounded-full top-3 right-3 focus:outline-none dark:bg-gray-500' onClick={()=>setShowDetails(null)}>
                         <MdClose  size={30}/>
                     </button>
 
                </div>
-               }
+          
+                
+              
+               )}
         </div>
+        
     )
 }
 

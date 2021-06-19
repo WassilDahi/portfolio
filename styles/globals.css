@@ -3,3 +3,12 @@
 @tailwind utilities;
 
 
+
+::-webkit-scrollbar-thumb{
+        background-image: linear-gradient(to right bottom,green,white);
+}
+
+::-webkit-scrollbar{
+    width:10px;
+    height:0px;
+}

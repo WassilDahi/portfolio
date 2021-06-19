@@ -74,7 +74,7 @@ export const tools:ISkill[] =[
 
 export const projects:IProject[]=[
 
-    {
+    {   id:1,
         name:'Algo sorting',
     description:"this is a project of algorthims sorting",
     image_path:'/images/sort.jpg',
@@ -84,7 +84,7 @@ export const projects:IProject[]=[
     key_techs:['react','chartjs','tailwind css']
 
     },
-    {
+    {   id:2,
         name:'sorting',
     description:"this is a project of algorthims sorting",
     image_path:'/images/sort.jpg',
@@ -94,7 +94,7 @@ export const projects:IProject[]=[
     key_techs:['react','chartjs','tailwind css']
 
     },
-    {
+    {   id:3,
         name:'Alging',
     description:"this is a project of algorthims sorting",
     image_path:'/images/sort.jpg',
@@ -104,7 +104,7 @@ export const projects:IProject[]=[
     key_techs:['react','chartjs','tailwind css']
 
     },
-    {
+    {   id:4,
         name:'Algting',
     description:"this is a project of algorthims sorting",
     image_path:'/images/sort.jpg',
@@ -114,7 +114,7 @@ export const projects:IProject[]=[
     key_techs:['react','chartjs','tailwind css']
 
     },
-    {
+    {   id:5,
         name:'ting',
     description:"this is a project of algorthims sorting",
     image_path:'/images/sort.jpg',
@@ -124,7 +124,7 @@ export const projects:IProject[]=[
     key_techs:['react','chartjs','tailwind css']
 
     },
-    {
+    {   id:6,
         name:'Alting',
     description:"this is a project of algorthims sorting",
     image_path:'/images/sort.jpg',
@@ -134,7 +134,7 @@ export const projects:IProject[]=[
     key_techs:['react','chartjs','tailwind css']
 
     },
-    {
+    {   id:7,
         name:'ing',
     description:"this is a project of algorthims sorting",
     image_path:'/images/sort.jpg',

@@ -13,6 +13,7 @@ const Projects = () => {
 
 const [projects, setProjects] = useState(projectsData)
 const [active, setActive] = useState('all')
+const [showDetails, setShowDetails] = useState<number|null>(null)
 
 const handleFilterCategory=(category:Category | 'all')=>{
 
@@ -26,17 +27,18 @@ const handleFilterCategory=(category:Category | 'all')=>{
 }
 
     return (
-        <motion.div exit='exit' className="px-5 py-2 overflow-y-scroll"style={{height:'65vh'}} variants={route_animation}  initial='initial' animate='animate'>
+        <motion.div exit='exit' className="px-5 py-2 overflow-y-scroll "style={{height:'65vh'}} variants={route_animation}  initial='initial' animate='animate'>
 
      
 <ProjectNavbar  handleFilterCategory={handleFilterCategory} active={active}/>
-<motion.div variants={stagger} animate="animate" initial="initial" className='relative grid grid-cols-12 gap-4 my-3'>
+<motion.div variants={stagger} animate="animate" initial="initial" className='relative grid grid-cols-12 gap-4 my-4'>
 
     {
         projects.map(project=>(
             <motion.div variants={fadeInUp}  className="col-span-12 p-2 bg-gray-300 rounded-lg dark:bg-gray-400 dark:text-black sm:col-span-6 lg:col-span-4"  key={project.name}>
-                <ProjectCard project={project} />
-             
+                
+                <ProjectCard project={project} showDetails={showDetails} setShowDetails={setShowDetails} />
+                
             </motion.div>
         ))
     }
